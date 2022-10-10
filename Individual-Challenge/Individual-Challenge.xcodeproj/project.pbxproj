@@ -14,9 +14,9 @@
 		F8B11ACB28F45825005DE5D5 /* Individual_Challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8B11AC928F45825005DE5D5 /* Individual_Challenge.xcdatamodeld */; };
 		F8B11ACD28F45826005DE5D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B11ACC28F45826005DE5D5 /* Assets.xcassets */; };
 		F8B11AD028F45826005DE5D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B11ACE28F45826005DE5D5 /* LaunchScreen.storyboard */; };
-		F8B11ADB28F45826005DE5D5 /* Individual_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11ADA28F45826005DE5D5 /* Individual_ChallengeTests.swift */; };
-		F8B11AE528F45826005DE5D5 /* Individual_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11AE428F45826005DE5D5 /* Individual_ChallengeUITests.swift */; };
-		F8B11AE728F45826005DE5D5 /* Individual_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11AE628F45826005DE5D5 /* Individual_ChallengeUITestsLaunchTests.swift */; };
+		F8B11ADB28F45826005DE5D5 /* IndividualChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11ADA28F45826005DE5D5 /* IndividualChallengeTests.swift */; };
+		F8B11AE528F45826005DE5D5 /* IndividualChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11AE428F45826005DE5D5 /* IndividualChallengeUITests.swift */; };
+		F8B11AE728F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11AE628F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +47,10 @@
 		F8B11ACF28F45826005DE5D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B11AD128F45826005DE5D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B11AD628F45826005DE5D5 /* Individual-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Individual-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8B11ADA28F45826005DE5D5 /* Individual_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Individual_ChallengeTests.swift; sourceTree = "<group>"; };
+		F8B11ADA28F45826005DE5D5 /* IndividualChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualChallengeTests.swift; sourceTree = "<group>"; };
 		F8B11AE028F45826005DE5D5 /* Individual-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Individual-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8B11AE428F45826005DE5D5 /* Individual_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Individual_ChallengeUITests.swift; sourceTree = "<group>"; };
-		F8B11AE628F45826005DE5D5 /* Individual_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Individual_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8B11AE428F45826005DE5D5 /* IndividualChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualChallengeUITests.swift; sourceTree = "<group>"; };
+		F8B11AE628F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 		F8B11AD928F45826005DE5D5 /* Individual-ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8B11ADA28F45826005DE5D5 /* Individual_ChallengeTests.swift */,
+				F8B11ADA28F45826005DE5D5 /* IndividualChallengeTests.swift */,
 			);
 			path = "Individual-ChallengeTests";
 			sourceTree = "<group>";
@@ -124,8 +124,8 @@
 		F8B11AE328F45826005DE5D5 /* Individual-ChallengeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F8B11AE428F45826005DE5D5 /* Individual_ChallengeUITests.swift */,
-				F8B11AE628F45826005DE5D5 /* Individual_ChallengeUITestsLaunchTests.swift */,
+				F8B11AE428F45826005DE5D5 /* IndividualChallengeUITests.swift */,
+				F8B11AE628F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift */,
 			);
 			path = "Individual-ChallengeUITests";
 			sourceTree = "<group>";
@@ -140,6 +140,7 @@
 				F8B11AB928F45825005DE5D5 /* Sources */,
 				F8B11ABA28F45825005DE5D5 /* Frameworks */,
 				F8B11ABB28F45825005DE5D5 /* Resources */,
+				F8B11AF328F46260005DE5D5 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -256,6 +257,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F8B11AF328F46260005DE5D5 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8B11AB928F45825005DE5D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -272,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8B11ADB28F45826005DE5D5 /* Individual_ChallengeTests.swift in Sources */,
+				F8B11ADB28F45826005DE5D5 /* IndividualChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +302,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8B11AE528F45826005DE5D5 /* Individual_ChallengeUITests.swift in Sources */,
-				F8B11AE728F45826005DE5D5 /* Individual_ChallengeUITestsLaunchTests.swift in Sources */,
+				F8B11AE528F45826005DE5D5 /* IndividualChallengeUITests.swift in Sources */,
+				F8B11AE728F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
