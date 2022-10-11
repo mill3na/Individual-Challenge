@@ -17,6 +17,7 @@
 		F8B11ADB28F45826005DE5D5 /* IndividualChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11ADA28F45826005DE5D5 /* IndividualChallengeTests.swift */; };
 		F8B11AE528F45826005DE5D5 /* IndividualChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11AE428F45826005DE5D5 /* IndividualChallengeUITests.swift */; };
 		F8B11AE728F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11AE628F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift */; };
+		F8B11AFB28F594B6005DE5D5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11AFA28F594B6005DE5D5 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F8B11AE028F45826005DE5D5 /* Individual-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Individual-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B11AE428F45826005DE5D5 /* IndividualChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualChallengeUITests.swift; sourceTree = "<group>"; };
 		F8B11AE628F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8B11AFA28F594B6005DE5D5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		F8B11ABF28F45825005DE5D5 /* Individual-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				F8B11AF928F5942F005DE5D5 /* Models */,
 				F8B11AC028F45825005DE5D5 /* AppDelegate.swift */,
 				F8B11AC228F45825005DE5D5 /* SceneDelegate.swift */,
 				F8B11AC428F45825005DE5D5 /* ViewController.swift */,
@@ -128,6 +131,22 @@
 				F8B11AE628F45826005DE5D5 /* IndividualChallengeUITestsLaunchTests.swift */,
 			);
 			path = "Individual-ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		F8B11AF628F5860D005DE5D5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F8B11AFA28F594B6005DE5D5 /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F8B11AF928F5942F005DE5D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8B11AF628F5860D005DE5D5 /* API */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +305,7 @@
 				F8B11ACB28F45825005DE5D5 /* Individual_Challenge.xcdatamodeld in Sources */,
 				F8B11AC528F45825005DE5D5 /* ViewController.swift in Sources */,
 				F8B11AC128F45825005DE5D5 /* AppDelegate.swift in Sources */,
+				F8B11AFB28F594B6005DE5D5 /* API.swift in Sources */,
 				F8B11AC328F45825005DE5D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
