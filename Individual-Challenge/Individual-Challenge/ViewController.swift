@@ -22,10 +22,15 @@ class ViewController: UIViewController {
 //            print(self.recipes)
 //        })
         
-        API().getRecipeInstructions(id: 404784, handler: { recipe in
-            self.recipes = recipe
-            print(self.recipes)
-        })
+        Task {
+            API().getRecipeInstructions(id: 404784, handler: { recipe in
+                self.recipes = recipe
+                print(self.recipes)
+                for recipe in self.recipes! {
+                    print("This recipe has \(recipe.steps.count) steps. \n")
+                }
+            })
+        }
         
 //        apiCall.getRecipeByQuery(query: "rice")
 //        apiCall.getRecipeInstructions(id: 404784) // {
