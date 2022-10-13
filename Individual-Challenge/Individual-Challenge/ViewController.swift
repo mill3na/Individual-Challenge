@@ -11,10 +11,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let apicall = API()
-//        apicall.getAllRecipes()
-//        apicall.getRecipeByQuery(query: "rice")
-//        apicall.getRecipeInstructions(id: 404784)
+        let apiCall = API()
+//        apiCall.getAllRecipes()
+//        apiCall.getRecipeByQuery(query: "rice")
+//        apiCall.getRecipeInstructions(id: 404784)
+        apiCall.getSpecificDietRecipe(diet: "vegan")
     }
 
 }
