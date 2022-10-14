@@ -54,18 +54,17 @@ class API {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request, completionHandler: { (data, _, error) in // _ = reponse
             // if let / guard let
-            if error == nil && data != nil {
-                do {
-                    if requestType == "getAll" || requestType == "recipeByQuery" {
-                        let decodedData = try JSONDecoder().decode(RecipeResult.self, from: data!)
+            if let data {
+                if error == nil {
+                    do {
+                        let decodedData = try JSONDecoder().decode(RecipeResult.self, from: data)
                         completion(decodedData)
-//                        print(decodedData)
-                        print("Ok")
                         return
+
+                    } catch {
+                        completion(nil)
+                        print("Error parsing response data")
                     }
-                } catch {
-                    completion(nil)
-                    print("Error parsing response data")
                 }
             }
             completion(nil)
@@ -87,16 +86,17 @@ class API {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request, completionHandler: { (data, _, error) in // _ = reponse
             // if let / guard let
-            if error == nil && data != nil {
-                do {
-                    let decodedData = try JSONDecoder().decode(RecipeInformationResult.self, from: data!)
-                    completion(decodedData)
-                    return
-                    
+            if let data {
+                if error == nil {
+                    do {
+                        let decodedData = try JSONDecoder().decode(RecipeInformationResult.self, from: data)
+                        completion(decodedData)
+                        return
 
-                } catch {
-                    completion(nil)
-                    print("Error parsing response data")
+                    } catch {
+                        completion(nil)
+                        print("Error parsing response data")
+                    }
                 }
             }
             completion(nil)
@@ -118,15 +118,17 @@ class API {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request, completionHandler: { (data, _, error) in // _ = reponse
             // if let / guard let
-            if error == nil && data != nil {
-                do {
-                    let decodedData = try JSONDecoder().decode([RecipeInstructionResult].self, from: data!)
-                    completion(decodedData)
-                    return
-                    
-                } catch {
-                    completion(nil)
-                    print("Error parsing response data")
+            if let data {
+                if error == nil {
+                    do {
+                        let decodedData = try JSONDecoder().decode([RecipeInstructionResult].self, from: data)
+                        completion(decodedData)
+                        return
+
+                    } catch {
+                        completion(nil)
+                        print("Error parsing response data")
+                    }
                 }
             }
             completion(nil)
