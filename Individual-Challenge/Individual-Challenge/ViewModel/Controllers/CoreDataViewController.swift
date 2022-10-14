@@ -10,18 +10,6 @@ import CoreData
 
 class CoreDataViewController: UIViewController {
     var favoriteRecipesList: [FavoriteRecipe]?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // reference to the managed object context
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-
-        saveOnCoreData(recipeId: 098765, context: context)
-        fetchPeople(context: context)
-        print(favoriteRecipesList)
-        deleteFromCoreData(id: 48344, context: context)
-        
-    }
     
     func saveOnCoreData(recipeId: Int64, context: NSManagedObjectContext) {
         let favoriteRecipe = FavoriteRecipe(context: context)
