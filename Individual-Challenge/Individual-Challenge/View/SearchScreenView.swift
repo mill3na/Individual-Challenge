@@ -54,7 +54,7 @@ class SearchScreenView: UIView {
     let searchBar: UISearchBar = {
         var searchBar = UISearchBar()
         searchBar.placeholder = "Search recipe"
-//        searchBar.tintColor = .blue
+        searchBar.tintColor = UIColor(named: "PrimaryColor2")
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
@@ -63,7 +63,13 @@ class SearchScreenView: UIView {
         let button = UIButton()
         button.backgroundColor = .gray
         button.setTitle("Vegan", for: .normal)
+        button.backgroundColor = UIColor(named: "SecondGreen")
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.setTitleColor(UIColor(named: "PrimaryColor2"), for: .normal)
+        button.layer.shadowColor = UIColor(named: "ThirdGreen")?.cgColor
+        button.layer.shadowOffset = CGSize(width: 1.5, height: 3)
+        button.layer.shadowOpacity = 0.6
+        button.layer.shadowRadius = 1.5
         button.layer.cornerRadius = 9
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -72,11 +78,17 @@ class SearchScreenView: UIView {
     let glutenFreeButton: UIButton = {
         let glutenFree = UIButton()
         glutenFree.backgroundColor = .gray
-        glutenFree.setTitle("No gluten", for: .normal)
+        glutenFree.setTitle("Gluten free diet", for: .normal)
+        glutenFree.backgroundColor = UIColor(named: "SecondGreen")
         glutenFree.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        glutenFree.setTitleColor(UIColor(named: "PrimaryColor2"), for: .normal)
+        glutenFree.layer.shadowColor = UIColor(named: "ThirdGreen")?.cgColor
+        glutenFree.layer.shadowOffset = CGSize(width: 1.5, height: 3)
+        glutenFree.layer.shadowOpacity = 0.6
+        glutenFree.layer.shadowRadius = 1.5
         glutenFree.layer.cornerRadius = 9
         glutenFree.titleLabel?.numberOfLines = 0
-        glutenFree.titleLabel?.textAlignment = NSTextAlignment.center
+        glutenFree.titleLabel?.textAlignment = .center
         glutenFree.translatesAutoresizingMaskIntoConstraints = false
         return glutenFree
     }()
@@ -85,11 +97,18 @@ class SearchScreenView: UIView {
         let dairyFree = UIButton()
         dairyFree.backgroundColor = .gray
         dairyFree.setTitle("Dairy free diet", for: .normal)
+        dairyFree.backgroundColor = UIColor(named: "SecondGreen")
         dairyFree.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        dairyFree.setTitleColor(UIColor(named: "PrimaryColor2"), for: .normal)
+        dairyFree.layer.shadowColor = UIColor(named: "ThirdGreen")?.cgColor
+        dairyFree.layer.shadowOffset = CGSize(width: 1.5, height: 3)
+        dairyFree.layer.shadowOpacity = 0.6
+        dairyFree.layer.shadowRadius = 1.5
         dairyFree.layer.cornerRadius = 9
+        dairyFree.translatesAutoresizingMaskIntoConstraints = false
         dairyFree.titleLabel?.numberOfLines = 0
         dairyFree.titleLabel?.textAlignment = NSTextAlignment.center
-        dairyFree.translatesAutoresizingMaskIntoConstraints = false
+        
         return dairyFree
     }()
 
@@ -97,7 +116,13 @@ class SearchScreenView: UIView {
         let ketogenic = UIButton()
         ketogenic.backgroundColor = .gray
         ketogenic.setTitle("Keto- genic", for: .normal)
+        ketogenic.backgroundColor = UIColor(named: "SecondGreen")
         ketogenic.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        ketogenic.setTitleColor(UIColor(named: "PrimaryColor2"), for: .normal)
+        ketogenic.layer.shadowColor = UIColor(named: "ThirdGreen")?.cgColor
+        ketogenic.layer.shadowOffset = CGSize(width: 1.5, height: 3)
+        ketogenic.layer.shadowOpacity = 0.6
+        ketogenic.layer.shadowRadius = 1.5
         ketogenic.layer.cornerRadius = 9
         ketogenic.titleLabel?.numberOfLines = 0
         ketogenic.titleLabel?.textAlignment = NSTextAlignment.center

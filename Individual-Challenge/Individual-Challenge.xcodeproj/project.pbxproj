@@ -27,8 +27,8 @@
 		F8B11B0D28F99C93005DE5D5 /* SearchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */; };
 		F8B11B1028F9EA6A005DE5D5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F8B11B0F28F9EA6A005DE5D5 /* Lottie */; };
 		F8B11B1828F9EE33005DE5D5 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = F8B11B1728F9EE33005DE5D5 /* food.json */; };
-		F8B11B1A28FA031E005DE5D5 /* food.gif in Resources */ = {isa = PBXBuildFile; fileRef = F8B11B1928FA031E005DE5D5 /* food.gif */; };
-		F8B11B1C28FA08A2005DE5D5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B1B28FA08A2005DE5D5 /* File.swift */; };
+		F8B11B1C28FA08A2005DE5D5 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B1B28FA08A2005DE5D5 /* Gif.swift */; };
+		F8B11B1E28FAEDE9005DE5D5 /* food.gif in Resources */ = {isa = PBXBuildFile; fileRef = F8B11B1D28FAEDE9005DE5D5 /* food.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +72,8 @@
 		F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
 		F8B11B1728F9EE33005DE5D5 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
-		F8B11B1928FA031E005DE5D5 /* food.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = food.gif; sourceTree = "<group>"; };
-		F8B11B1B28FA08A2005DE5D5 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		F8B11B1B28FA08A2005DE5D5 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		F8B11B1D28FAEDE9005DE5D5 /* food.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = food.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 				F8B11ACE28F45826005DE5D5 /* LaunchScreen.storyboard */,
 				F8B11AD128F45826005DE5D5 /* Info.plist */,
 				F8B11AC928F45825005DE5D5 /* Individual_Challenge.xcdatamodeld */,
-				F8B11B1B28FA08A2005DE5D5 /* File.swift */,
+				F8B11B1B28FA08A2005DE5D5 /* Gif.swift */,
 			);
 			path = "Individual-Challenge";
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 		F8B11B1128F9EAF1005DE5D5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				F8B11B1928FA031E005DE5D5 /* food.gif */,
+				F8B11B1D28FAEDE9005DE5D5 /* food.gif */,
 				F8B11ACC28F45826005DE5D5 /* Assets.xcassets */,
 				F8B11B1228F9EAF9005DE5D5 /* Lottie */,
 			);
@@ -333,8 +333,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B11AD028F45826005DE5D5 /* LaunchScreen.storyboard in Resources */,
-				F8B11B1A28FA031E005DE5D5 /* food.gif in Resources */,
 				F8B11B1828F9EE33005DE5D5 /* food.json in Resources */,
+				F8B11B1E28FAEDE9005DE5D5 /* food.gif in Resources */,
 				F8B11ACD28F45826005DE5D5 /* Assets.xcassets in Resources */,
 				F8B11AC828F45825005DE5D5 /* Main.storyboard in Resources */,
 			);
@@ -392,7 +392,7 @@
 				F8B11B0328F97F58005DE5D5 /* FavoriteRecipe+CoreDataClass.swift in Sources */,
 				F8B11AFB28F594B6005DE5D5 /* API.swift in Sources */,
 				F8B11B0428F97F58005DE5D5 /* FavoriteRecipe+CoreDataProperties.swift in Sources */,
-				F8B11B1C28FA08A2005DE5D5 /* File.swift in Sources */,
+				F8B11B1C28FA08A2005DE5D5 /* Gif.swift in Sources */,
 				F8B11B0D28F99C93005DE5D5 /* SearchScreenView.swift in Sources */,
 				F8B11AC328F45825005DE5D5 /* SceneDelegate.swift in Sources */,
 			);

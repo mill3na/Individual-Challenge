@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Gif.swift
 //  Individual-Challenge
 //
 //  Created by Milena Maia Araújo on 14/10/22.
@@ -13,6 +13,7 @@ import Foundation
 //  Created by iOSDevCenters on 11/12/15.
 //  Copyright © 2016 iOSDevCenters. All rights reserved.
 //
+
 import UIKit
 import ImageIO
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
