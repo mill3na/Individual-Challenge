@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         Task {
             API().getRecipeInstructions(id: 404784, handler: { recipe in
                 self.recipes = recipe
-                print(self.recipes)
+                print(self.recipes!)
                 for recipe in self.recipes! {
                     print("This recipe has \(recipe.steps.count) steps. \n")
                 }

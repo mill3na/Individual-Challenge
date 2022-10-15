@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol VeganFoodDelegate: AnyObject {
+    func presentVeganFood()
+}
+
 class SearchScreenView: UIView {
     
     let dietButtonsTextSize = 10
@@ -35,7 +39,7 @@ class SearchScreenView: UIView {
         self.addSubview(foodImage)
         self.gifImageConfigConstraints()
 
-        self.addSubview(searchLabel)
+        self.addSubview(cookLabel)
         self.searchLabelConfigConstraints()
     }
     
@@ -71,9 +75,14 @@ class SearchScreenView: UIView {
         button.layer.shadowOpacity = 0.6
         button.layer.shadowRadius = 1.5
         button.layer.cornerRadius = 9
+        button.addTarget(self, action: #selector(presentVeganFood), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc func presentVeganFood() {
+        
+    }
     
     let glutenFreeButton: UIButton = {
         let glutenFree = UIButton()
@@ -139,14 +148,14 @@ class SearchScreenView: UIView {
         return image
     }()
     
-    let searchLabel: UILabel = {
-        var searchLabel = UILabel()
-        searchLabel.text = "No recipe to show yet."
-        searchLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        searchLabel.textColor = .black
-        searchLabel.numberOfLines = 0
-        searchLabel.translatesAutoresizingMaskIntoConstraints = false
-        return searchLabel
+    let cookLabel: UILabel = {
+        var cookLabel = UILabel()
+        cookLabel.text = "What are we going to cook?"
+        cookLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        cookLabel.textColor = .black
+        cookLabel.numberOfLines = 0
+        cookLabel.translatesAutoresizingMaskIntoConstraints = false
+        return cookLabel
     }()
     
     private func welcomeLabelConfigConstraints() {
@@ -205,7 +214,7 @@ class SearchScreenView: UIView {
     
     private func searchLabelConfigConstraints() {
         NSLayoutConstraint.activate([
-            self.searchLabel.topAnchor.constraint(equalTo: veganFoodButton.bottomAnchor, constant: 400),
-            self.searchLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 10)])
+            self.cookLabel.topAnchor.constraint(equalTo: veganFoodButton.bottomAnchor, constant: 400),
+            self.cookLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 10)])
     }
 }

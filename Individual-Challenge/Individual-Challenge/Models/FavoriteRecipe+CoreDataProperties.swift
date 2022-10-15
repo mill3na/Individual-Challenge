@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension FavoriteRecipe {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<FavoriteRecipe> {
@@ -20,6 +19,6 @@ extension FavoriteRecipe {
 
 }
 
-extension FavoriteRecipe : Identifiable {
+extension FavoriteRecipe: Identifiable {
 
 }

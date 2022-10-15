@@ -26,9 +26,10 @@
 		F8B11B0B28F99C7C005DE5D5 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */; };
 		F8B11B0D28F99C93005DE5D5 /* SearchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */; };
 		F8B11B1028F9EA6A005DE5D5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F8B11B0F28F9EA6A005DE5D5 /* Lottie */; };
-		F8B11B1828F9EE33005DE5D5 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = F8B11B1728F9EE33005DE5D5 /* food.json */; };
 		F8B11B1C28FA08A2005DE5D5 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B1B28FA08A2005DE5D5 /* Gif.swift */; };
 		F8B11B1E28FAEDE9005DE5D5 /* food.gif in Resources */ = {isa = PBXBuildFile; fileRef = F8B11B1D28FAEDE9005DE5D5 /* food.gif */; };
+		F8B11B2028FB0468005DE5D5 /* VeganFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */; };
+		F8B11B2228FB04B8005DE5D5 /* VeganFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,9 +72,10 @@
 		F8B11B0628F9822D005DE5D5 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
-		F8B11B1728F9EE33005DE5D5 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
 		F8B11B1B28FA08A2005DE5D5 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		F8B11B1D28FAEDE9005DE5D5 /* food.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = food.gif; sourceTree = "<group>"; };
+		F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganFoodView.swift; sourceTree = "<group>"; };
+		F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganFoodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,6 @@
 				F8B11ACE28F45826005DE5D5 /* LaunchScreen.storyboard */,
 				F8B11AD128F45826005DE5D5 /* Info.plist */,
 				F8B11AC928F45825005DE5D5 /* Individual_Challenge.xcdatamodeld */,
-				F8B11B1B28FA08A2005DE5D5 /* Gif.swift */,
 			);
 			path = "Individual-Challenge";
 			sourceTree = "<group>";
@@ -189,6 +190,7 @@
 			children = (
 				F8B11B1128F9EAF1005DE5D5 /* Assets */,
 				F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */,
+				F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +201,7 @@
 				F8B11B0628F9822D005DE5D5 /* CoreDataViewController.swift */,
 				F8B11AC428F45825005DE5D5 /* ViewController.swift */,
 				F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */,
+				F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,19 +209,19 @@
 		F8B11B1128F9EAF1005DE5D5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F8B11B2328FB06BA005DE5D5 /* Services */,
 				F8B11B1D28FAEDE9005DE5D5 /* food.gif */,
 				F8B11ACC28F45826005DE5D5 /* Assets.xcassets */,
-				F8B11B1228F9EAF9005DE5D5 /* Lottie */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		F8B11B1228F9EAF9005DE5D5 /* Lottie */ = {
+		F8B11B2328FB06BA005DE5D5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F8B11B1728F9EE33005DE5D5 /* food.json */,
+				F8B11B1B28FA08A2005DE5D5 /* Gif.swift */,
 			);
-			path = Lottie;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,7 +336,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B11AD028F45826005DE5D5 /* LaunchScreen.storyboard in Resources */,
-				F8B11B1828F9EE33005DE5D5 /* food.json in Resources */,
 				F8B11B1E28FAEDE9005DE5D5 /* food.gif in Resources */,
 				F8B11ACD28F45826005DE5D5 /* Assets.xcassets in Resources */,
 				F8B11AC828F45825005DE5D5 /* Main.storyboard in Resources */,
@@ -382,10 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B11B2028FB0468005DE5D5 /* VeganFoodView.swift in Sources */,
 				F8B11B0B28F99C7C005DE5D5 /* SearchScreenViewController.swift in Sources */,
 				F8B11ACB28F45825005DE5D5 /* Individual_Challenge.xcdatamodeld in Sources */,
 				F8B11AFD28F5AC29005DE5D5 /* Recipe.swift in Sources */,
 				F8B11AC528F45825005DE5D5 /* ViewController.swift in Sources */,
+				F8B11B2228FB04B8005DE5D5 /* VeganFoodViewController.swift in Sources */,
 				F8B11B0728F9822D005DE5D5 /* CoreDataViewController.swift in Sources */,
 				F8B11AFF28F5B2F5005DE5D5 /* Results.swift in Sources */,
 				F8B11AC128F45825005DE5D5 /* AppDelegate.swift in Sources */,
