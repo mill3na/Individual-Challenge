@@ -40,7 +40,9 @@ class API {
         getRecipeInstructionsRequest(url: url, completion: handler)
     }
     
-    func getGeneralRecipeRequest(url: String, requestType: String, completion: @escaping ((RecipeResult?) -> Void)) { //completion devia ser Result type Result<RecipeResult, Error>
+    func getGeneralRecipeRequest(url: String, requestType: String, completion: @escaping ((RecipeResult?) -> Void)) {
+        
+        // completion devia ser Result type Result<RecipeResult, Error>
         // gets all the recipes from the API
         let urlRequest = URL(string: url)
         var request = URLRequest(url: urlRequest!)
@@ -72,7 +74,9 @@ class API {
         dataTask.resume()
     }
     
-    func getRecipeInfoRequest(url: String, completion: @escaping ((RecipeInformationResult?) -> Void)) { //completion devia ser Result type Result<RecipeResult, Error>
+    func getRecipeInfoRequest(url: String, completion: @escaping ((RecipeInformationResult?) -> Void)) {
+        
+        // completion devia ser Result type Result<RecipeResult, Error>
         // gets all the recipes from the API
         let urlRequest = URL(string: url)
         var request = URLRequest(url: urlRequest!)
@@ -104,7 +108,9 @@ class API {
         dataTask.resume()
     }
     
-    func getRecipeInstructionsRequest(url: String, completion: @escaping (([RecipeInstructionResult]?) -> Void)) { //completion devia ser Result type Result<RecipeResult, Error>
+    func getRecipeInstructionsRequest(url: String, completion: @escaping (([RecipeInstructionResult]?) -> Void)) {
+        
+        // completion devia ser Result type Result<RecipeResult, Error>
         // gets all the recipes from the API
         let urlRequest = URL(string: url)
         var request = URLRequest(url: urlRequest!)

@@ -18,7 +18,7 @@ class CoreDataViewController: UIViewController {
         do {
             try context.save()
         } catch {
-            print("ERROR: Could not save favorite recipe at the core data.")
+            print("ERROR: Couldn't save favorite recipe at the core data.")
             print(error)
         }
     }

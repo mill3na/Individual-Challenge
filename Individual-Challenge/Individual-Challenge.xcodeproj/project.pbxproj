@@ -23,6 +23,13 @@
 		F8B11B0328F97F58005DE5D5 /* FavoriteRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B0128F97F58005DE5D5 /* FavoriteRecipe+CoreDataClass.swift */; };
 		F8B11B0428F97F58005DE5D5 /* FavoriteRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B0228F97F58005DE5D5 /* FavoriteRecipe+CoreDataProperties.swift */; };
 		F8B11B0728F9822D005DE5D5 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B0628F9822D005DE5D5 /* CoreDataViewController.swift */; };
+		F8B11B0B28F99C7C005DE5D5 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */; };
+		F8B11B0D28F99C93005DE5D5 /* SearchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */; };
+		F8B11B1028F9EA6A005DE5D5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F8B11B0F28F9EA6A005DE5D5 /* Lottie */; };
+		F8B11B1C28FA08A2005DE5D5 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B1B28FA08A2005DE5D5 /* Gif.swift */; };
+		F8B11B1E28FAEDE9005DE5D5 /* food.gif in Resources */ = {isa = PBXBuildFile; fileRef = F8B11B1D28FAEDE9005DE5D5 /* food.gif */; };
+		F8B11B2028FB0468005DE5D5 /* VeganFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */; };
+		F8B11B2228FB04B8005DE5D5 /* VeganFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +70,12 @@
 		F8B11B0128F97F58005DE5D5 /* FavoriteRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F8B11B0228F97F58005DE5D5 /* FavoriteRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F8B11B0628F9822D005DE5D5 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
+		F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
+		F8B11B1B28FA08A2005DE5D5 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		F8B11B1D28FAEDE9005DE5D5 /* food.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = food.gif; sourceTree = "<group>"; };
+		F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganFoodView.swift; sourceTree = "<group>"; };
+		F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganFoodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B11B1028F9EA6A005DE5D5 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +133,6 @@
 				F8B11AC028F45825005DE5D5 /* AppDelegate.swift */,
 				F8B11AC228F45825005DE5D5 /* SceneDelegate.swift */,
 				F8B11AC628F45825005DE5D5 /* Main.storyboard */,
-				F8B11ACC28F45826005DE5D5 /* Assets.xcassets */,
 				F8B11ACE28F45826005DE5D5 /* LaunchScreen.storyboard */,
 				F8B11AD128F45826005DE5D5 /* Info.plist */,
 				F8B11AC928F45825005DE5D5 /* Individual_Challenge.xcdatamodeld */,
@@ -175,6 +188,9 @@
 		F8B11B0828F98243005DE5D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F8B11B1128F9EAF1005DE5D5 /* Assets */,
+				F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */,
+				F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,8 +200,28 @@
 			children = (
 				F8B11B0628F9822D005DE5D5 /* CoreDataViewController.swift */,
 				F8B11AC428F45825005DE5D5 /* ViewController.swift */,
+				F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */,
+				F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F8B11B1128F9EAF1005DE5D5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F8B11B2328FB06BA005DE5D5 /* Services */,
+				F8B11B1D28FAEDE9005DE5D5 /* food.gif */,
+				F8B11ACC28F45826005DE5D5 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F8B11B2328FB06BA005DE5D5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F8B11B1B28FA08A2005DE5D5 /* Gif.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +241,9 @@
 			dependencies = (
 			);
 			name = "Individual-Challenge";
+			packageProductDependencies = (
+				F8B11B0F28F9EA6A005DE5D5 /* Lottie */,
+			);
 			productName = "Individual-Challenge";
 			productReference = F8B11ABD28F45825005DE5D5 /* Individual-Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +316,9 @@
 				Base,
 			);
 			mainGroup = F8B11AB428F45825005DE5D5;
+			packageReferences = (
+				F8B11B0E28F9EA6A005DE5D5 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = F8B11ABE28F45825005DE5D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B11AD028F45826005DE5D5 /* LaunchScreen.storyboard in Resources */,
+				F8B11B1E28FAEDE9005DE5D5 /* food.gif in Resources */,
 				F8B11ACD28F45826005DE5D5 /* Assets.xcassets in Resources */,
 				F8B11AC828F45825005DE5D5 /* Main.storyboard in Resources */,
 			);
@@ -341,15 +384,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B11B2028FB0468005DE5D5 /* VeganFoodView.swift in Sources */,
+				F8B11B0B28F99C7C005DE5D5 /* SearchScreenViewController.swift in Sources */,
 				F8B11ACB28F45825005DE5D5 /* Individual_Challenge.xcdatamodeld in Sources */,
 				F8B11AFD28F5AC29005DE5D5 /* Recipe.swift in Sources */,
 				F8B11AC528F45825005DE5D5 /* ViewController.swift in Sources */,
+				F8B11B2228FB04B8005DE5D5 /* VeganFoodViewController.swift in Sources */,
 				F8B11B0728F9822D005DE5D5 /* CoreDataViewController.swift in Sources */,
 				F8B11AFF28F5B2F5005DE5D5 /* Results.swift in Sources */,
 				F8B11AC128F45825005DE5D5 /* AppDelegate.swift in Sources */,
 				F8B11B0328F97F58005DE5D5 /* FavoriteRecipe+CoreDataClass.swift in Sources */,
 				F8B11AFB28F594B6005DE5D5 /* API.swift in Sources */,
 				F8B11B0428F97F58005DE5D5 /* FavoriteRecipe+CoreDataProperties.swift in Sources */,
+				F8B11B1C28FA08A2005DE5D5 /* Gif.swift in Sources */,
+				F8B11B0D28F99C93005DE5D5 /* SearchScreenView.swift in Sources */,
 				F8B11AC328F45825005DE5D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,6 +742,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8B11B0E28F9EA6A005DE5D5 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8B11B0F28F9EA6A005DE5D5 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8B11B0E28F9EA6A005DE5D5 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F8B11AC928F45825005DE5D5 /* Individual_Challenge.xcdatamodeld */ = {
