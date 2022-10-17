@@ -15,7 +15,8 @@ class VeganFoodViewController: UIViewController {
         super.viewDidLoad()
         self.screen = VeganFoodView()
         self.view = screen
-        view.backgroundColor = .blue
+        view.backgroundColor = .systemBackground
+        view.frame(forAlignmentRect: CGRect(x: 40, y: 163, width: 295, height: 440))
         // Do any additional setup after loading the view.
     }
     

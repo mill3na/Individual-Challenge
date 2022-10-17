@@ -35,9 +35,6 @@ class SearchScreenView: UIView {
         self.addSubview(dairyFreeButton)
         self.dairyFreeButtonConfigConstraints()
         
-        self.addSubview(ketogenicButton)
-        self.ketogenicButtonConfigConstraints()
-        
         self.addSubview(foodImage)
         self.gifImageConfigConstraints()
 
@@ -173,35 +170,27 @@ class SearchScreenView: UIView {
     private func veganFoodButtonConfigConstraints() {
         NSLayoutConstraint.activate([
             self.veganFoodButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 21),
-            self.veganFoodButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 36),
-            self.veganFoodButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -296),
+            self.veganFoodButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 72),
+            self.veganFoodButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -258),
             self.veganFoodButton.heightAnchor.constraint(equalToConstant: 59)])
     }
     
     private func glutenFreeButtonConfigConstraints() {
         NSLayoutConstraint.activate([
             self.glutenFreeButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 21),
-            self.glutenFreeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 117),
-            self.glutenFreeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -216),
+            self.glutenFreeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 157),
+            self.glutenFreeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -173),
             self.glutenFreeButton.heightAnchor.constraint(equalToConstant: 59)])
     }
     
     private func dairyFreeButtonConfigConstraints() {
         NSLayoutConstraint.activate([
             self.dairyFreeButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 21),
-            self.dairyFreeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 199),
-            self.dairyFreeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -131),
+            self.dairyFreeButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 241),
+            self.dairyFreeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -89),
             self.dairyFreeButton.heightAnchor.constraint(equalToConstant: 59)])
     }
 
-    private func ketogenicButtonConfigConstraints() {
-        NSLayoutConstraint.activate([
-            self.ketogenicButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 21),
-            self.ketogenicButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 283),
-            self.ketogenicButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -47),
-            self.ketogenicButton.heightAnchor.constraint(equalToConstant: 59)])
-    }
-    
     private func gifImageConfigConstraints() {
         NSLayoutConstraint.activate([
             self.foodImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 250),

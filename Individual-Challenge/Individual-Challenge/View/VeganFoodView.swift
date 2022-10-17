@@ -23,12 +23,15 @@ class VeganFoodView: UIView {
     var label: UILabel = {
        let label = UILabel()
         label.text = "Some Vegan foods"
+        label.textColor = UIColor(named: "PrimaryColor2")
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     func labelConfigConstraints() {
         NSLayoutConstraint.activate([
-            self.label.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            self.label.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
             self.label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20)]
         )

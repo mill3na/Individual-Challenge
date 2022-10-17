@@ -10,9 +10,17 @@ import UIKit
 class SearchScreenViewController: UIViewController {
     var screen: SearchScreenView?
     
+    private let veganFood: VeganFoodViewController = {
+        let veganView = VeganFoodViewController()
+        veganView.view.translatesAutoresizingMaskIntoConstraints = false
+        return veganView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationbarItems()
+        view.addSubview(veganFood.view)
+        self.setUpConstraints()
     }
     
     override func loadView() {
@@ -25,16 +33,30 @@ class SearchScreenViewController: UIViewController {
         self.screen?.ketogenicButton.addTarget(self, action: #selector(presentKetogenicFood), for: .touchUpInside)
     }
     
+    private func setUpConstraints() {
+        NSLayoutConstraint.activate([
+            self.veganFood.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 100),
+            self.veganFood.view.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            //self.veganFood.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5)
+        ])
+    }
+    
     private func configureNavigationbarItems() {
         navigationItem.title = "Search Recipe"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: nil)
     }
     
     @objc func presentVeganFood() {
+//   self.veganFood.view.isHidden = false
+//        self.view.sendSubviewToBack(self.screen!)
+//        self.view.bringSubviewToFront(self.veganFood.view)
+//
         let veganVC = VeganFoodViewController()
-        let navigationControler = UINavigationController(rootViewController: veganVC)
-        navigationControler.modalPresentationStyle = .formSheet
-        present(navigationControler, animated: true, completion: nil)
+//        let navigationControler = UINavigationController(rootViewController: veganVC)
+        if let sheet = veganVC.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        present(veganVC, animated: true, completion: nil)
     }
     
     @objc func presentGlutenFreeFood () {
