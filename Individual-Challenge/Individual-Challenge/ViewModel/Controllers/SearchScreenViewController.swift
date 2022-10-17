@@ -30,7 +30,6 @@ class SearchScreenViewController: UIViewController {
         self.screen?.veganFoodButton.addTarget(self, action: #selector(presentVeganFood), for: .touchUpInside)
         self.screen?.glutenFreeButton.addTarget(self, action: #selector(presentGlutenFreeFood), for: .touchUpInside)
         self.screen?.dairyFreeButton.addTarget(self, action: #selector(presentDairyFreeFood), for: .touchUpInside)
-        self.screen?.ketogenicButton.addTarget(self, action: #selector(presentKetogenicFood), for: .touchUpInside)
     }
     
     private func setUpConstraints() {
@@ -47,27 +46,37 @@ class SearchScreenViewController: UIViewController {
     }
     
     @objc func presentVeganFood() {
-//   self.veganFood.view.isHidden = false
-//        self.view.sendSubviewToBack(self.screen!)
-//        self.view.bringSubviewToFront(self.veganFood.view)
-//
         let veganVC = VeganFoodViewController()
-//        let navigationControler = UINavigationController(rootViewController: veganVC)
         if let sheet = veganVC.sheetPresentationController {
             sheet.detents = [.medium()]
         }
+        
+        veganVC.modalPresentationStyle = .overCurrentContext
+        veganVC.modalTransitionStyle = .crossDissolve
         present(veganVC, animated: true, completion: nil)
     }
     
     @objc func presentGlutenFreeFood () {
+        let glutenFreeVC = GlutenFreeViewController()
+        if let sheet = glutenFreeVC.sheetPresentationController {
+                sheet.detents = [.medium()]
+            
+        }
+        glutenFreeVC.modalPresentationStyle = .overCurrentContext
+        glutenFreeVC.modalTransitionStyle = .crossDissolve
+        present(glutenFreeVC, animated: true, completion: nil)
         print("Gluten Free!")
     }
     
     @objc func presentDairyFreeFood() {
+        let dairyFreeVC = DairyFreeViewController()
+        if let sheet = dairyFreeVC.sheetPresentationController {
+                sheet.detents = [.medium()]
+            
+        }
+        dairyFreeVC.modalPresentationStyle = .overCurrentContext
+        dairyFreeVC.modalTransitionStyle = .crossDissolve
+        present(dairyFreeVC, animated: true, completion: nil)
         print("Dairy free!")
-    }
-    
-    @objc func presentKetogenicFood() {
-        print("Ketogenic!")
     }
 }
