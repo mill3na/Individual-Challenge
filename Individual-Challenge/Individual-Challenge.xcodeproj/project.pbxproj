@@ -30,6 +30,10 @@
 		F8B11B1E28FAEDE9005DE5D5 /* food.gif in Resources */ = {isa = PBXBuildFile; fileRef = F8B11B1D28FAEDE9005DE5D5 /* food.gif */; };
 		F8B11B2028FB0468005DE5D5 /* VeganFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */; };
 		F8B11B2228FB04B8005DE5D5 /* VeganFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */; };
+		F8B11B2728FB1107005DE5D5 /* DairyFreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2628FB1107005DE5D5 /* DairyFreeView.swift */; };
+		F8B11B2928FB1115005DE5D5 /* GlutenFreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2828FB1115005DE5D5 /* GlutenFreeView.swift */; };
+		F8B11B2B28FB1127005DE5D5 /* KetogenicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2A28FB1127005DE5D5 /* KetogenicView.swift */; };
+		F8B11B2D28FB155D005DE5D5 /* GlutenFreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2C28FB155D005DE5D5 /* GlutenFreeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		F8B11B1D28FAEDE9005DE5D5 /* food.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = food.gif; sourceTree = "<group>"; };
 		F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganFoodView.swift; sourceTree = "<group>"; };
 		F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganFoodViewController.swift; sourceTree = "<group>"; };
+		F8B11B2628FB1107005DE5D5 /* DairyFreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyFreeView.swift; sourceTree = "<group>"; };
+		F8B11B2828FB1115005DE5D5 /* GlutenFreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlutenFreeView.swift; sourceTree = "<group>"; };
+		F8B11B2A28FB1127005DE5D5 /* KetogenicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KetogenicView.swift; sourceTree = "<group>"; };
+		F8B11B2C28FB155D005DE5D5 /* GlutenFreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlutenFreeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +199,9 @@
 				F8B11B1128F9EAF1005DE5D5 /* Assets */,
 				F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */,
 				F8B11B1F28FB0468005DE5D5 /* VeganFoodView.swift */,
+				F8B11B2628FB1107005DE5D5 /* DairyFreeView.swift */,
+				F8B11B2828FB1115005DE5D5 /* GlutenFreeView.swift */,
+				F8B11B2A28FB1127005DE5D5 /* KetogenicView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 				F8B11AC428F45825005DE5D5 /* ViewController.swift */,
 				F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */,
 				F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */,
+				F8B11B2C28FB155D005DE5D5 /* GlutenFreeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -388,15 +400,19 @@
 				F8B11B0B28F99C7C005DE5D5 /* SearchScreenViewController.swift in Sources */,
 				F8B11ACB28F45825005DE5D5 /* Individual_Challenge.xcdatamodeld in Sources */,
 				F8B11AFD28F5AC29005DE5D5 /* Recipe.swift in Sources */,
+				F8B11B2728FB1107005DE5D5 /* DairyFreeView.swift in Sources */,
 				F8B11AC528F45825005DE5D5 /* ViewController.swift in Sources */,
+				F8B11B2B28FB1127005DE5D5 /* KetogenicView.swift in Sources */,
 				F8B11B2228FB04B8005DE5D5 /* VeganFoodViewController.swift in Sources */,
 				F8B11B0728F9822D005DE5D5 /* CoreDataViewController.swift in Sources */,
 				F8B11AFF28F5B2F5005DE5D5 /* Results.swift in Sources */,
 				F8B11AC128F45825005DE5D5 /* AppDelegate.swift in Sources */,
 				F8B11B0328F97F58005DE5D5 /* FavoriteRecipe+CoreDataClass.swift in Sources */,
 				F8B11AFB28F594B6005DE5D5 /* API.swift in Sources */,
+				F8B11B2928FB1115005DE5D5 /* GlutenFreeView.swift in Sources */,
 				F8B11B0428F97F58005DE5D5 /* FavoriteRecipe+CoreDataProperties.swift in Sources */,
 				F8B11B1C28FA08A2005DE5D5 /* Gif.swift in Sources */,
+				F8B11B2D28FB155D005DE5D5 /* GlutenFreeViewController.swift in Sources */,
 				F8B11B0D28F99C93005DE5D5 /* SearchScreenView.swift in Sources */,
 				F8B11AC328F45825005DE5D5 /* SceneDelegate.swift in Sources */,
 			);

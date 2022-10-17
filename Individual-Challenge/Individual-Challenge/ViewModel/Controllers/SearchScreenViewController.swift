@@ -20,6 +20,9 @@ class SearchScreenViewController: UIViewController {
         self.view = screen
         view.backgroundColor = .systemBackground
         self.screen?.veganFoodButton.addTarget(self, action: #selector(presentVeganFood), for: .touchUpInside)
+        self.screen?.glutenFreeButton.addTarget(self, action: #selector(presentGlutenFreeFood), for: .touchUpInside)
+        self.screen?.dairyFreeButton.addTarget(self, action: #selector(presentDairyFreeFood), for: .touchUpInside)
+        self.screen?.ketogenicButton.addTarget(self, action: #selector(presentKetogenicFood), for: .touchUpInside)
     }
     
     private func configureNavigationbarItems() {
@@ -32,5 +35,17 @@ class SearchScreenViewController: UIViewController {
         let navigationControler = UINavigationController(rootViewController: veganVC)
         navigationControler.modalPresentationStyle = .formSheet
         present(navigationControler, animated: true, completion: nil)
+    }
+    
+    @objc func presentGlutenFreeFood () {
+        print("Gluten Free!")
+    }
+    
+    @objc func presentDairyFreeFood() {
+        print("Dairy free!")
+    }
+    
+    @objc func presentKetogenicFood() {
+        print("Ketogenic!")
     }
 }

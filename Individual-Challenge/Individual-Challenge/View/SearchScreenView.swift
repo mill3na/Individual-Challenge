@@ -7,8 +7,10 @@
 
 import UIKit
 
-protocol VeganFoodDelegate: AnyObject {
+protocol FoodDelegate: AnyObject {
     func presentVeganFood()
+    func presentDairyFood()
+    func presentGlutenFreeFood()
 }
 
 class SearchScreenView: UIView {
@@ -46,6 +48,7 @@ class SearchScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     let welcomeLabel: UILabel = {
         var welcomeLabel = UILabel()
         welcomeLabel.text = "Welcome! Type something in the search bar to begin."
@@ -75,14 +78,9 @@ class SearchScreenView: UIView {
         button.layer.shadowOpacity = 0.6
         button.layer.shadowRadius = 1.5
         button.layer.cornerRadius = 9
-        button.addTarget(self, action: #selector(presentVeganFood), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    @objc func presentVeganFood() {
-        
-    }
     
     let glutenFreeButton: UIButton = {
         let glutenFree = UIButton()
@@ -101,7 +99,7 @@ class SearchScreenView: UIView {
         glutenFree.translatesAutoresizingMaskIntoConstraints = false
         return glutenFree
     }()
-
+    
     let dairyFreeButton: UIButton = {
         let dairyFree = UIButton()
         dairyFree.backgroundColor = .gray
