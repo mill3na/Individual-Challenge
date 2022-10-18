@@ -15,8 +15,8 @@ protocol FoodDelegate: AnyObject {
 
 class SearchScreenView: UIView {
     
-    let dietButtonsTextSize = 10
-    
+    let myCollectionView = RecipesCollectionViewController()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -25,6 +25,9 @@ class SearchScreenView: UIView {
         
         self.addSubview(searchBar)
         self.searchbarConfigConstraints()
+        
+//        self.addSubview(searchButton)
+//        self.searchButtonConfigConstraints()
         
         self.addSubview(veganFoodButton)
         self.veganFoodButtonConfigConstraints()
@@ -40,6 +43,9 @@ class SearchScreenView: UIView {
 
         self.addSubview(cookLabel)
         self.searchLabelConfigConstraints()
+        
+//        self.addSubview(myCollectionView.view)
+//        self.collectionViewConfigConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -55,12 +61,19 @@ class SearchScreenView: UIView {
         return welcomeLabel
     }()
     
-    let searchBar: UISearchBar = {
+    var searchBar: UISearchBar = {
         var searchBar = UISearchBar()
         searchBar.placeholder = "Search recipe"
         searchBar.tintColor = UIColor(named: "PrimaryColor2")
+        searchBar.showsSearchResultsButton = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
+    }()
+    
+    var searchButton: UIButton = {
+        let searchButton = UIButton()
+        searchButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        return searchButton
     }()
     
     let veganFoodButton: UIButton = {
@@ -116,24 +129,6 @@ class SearchScreenView: UIView {
         return dairyFree
     }()
 
-    let ketogenicButton: UIButton = {
-        let ketogenic = UIButton()
-        ketogenic.backgroundColor = .gray
-        ketogenic.setTitle("Keto- genic", for: .normal)
-        ketogenic.backgroundColor = UIColor(named: "SecondGreen")
-        ketogenic.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        ketogenic.setTitleColor(UIColor(named: "PrimaryColor2"), for: .normal)
-        ketogenic.layer.shadowColor = UIColor(named: "ThirdGreen")?.cgColor
-        ketogenic.layer.shadowOffset = CGSize(width: 1.5, height: 3)
-        ketogenic.layer.shadowOpacity = 0.6
-        ketogenic.layer.shadowRadius = 1.5
-        ketogenic.layer.cornerRadius = 9
-        ketogenic.titleLabel?.numberOfLines = 0
-        ketogenic.titleLabel?.textAlignment = NSTextAlignment.center
-        ketogenic.translatesAutoresizingMaskIntoConstraints = false
-        return ketogenic
-    }()
-    
     let foodImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage.gifImageWithName("food")
@@ -164,7 +159,13 @@ class SearchScreenView: UIView {
         NSLayoutConstraint.activate([
             self.searchBar.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 20),
             self.searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            self.searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)])
+            self.searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)])
+    }
+    
+    private func searchButtonConfigConstraints() {
+        NSLayoutConstraint.activate([self.searchButton.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 20),
+            self.searchButton.leadingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: 5),
+            self.searchButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3)])
     }
     
     private func veganFoodButtonConfigConstraints() {
@@ -203,5 +204,10 @@ class SearchScreenView: UIView {
         NSLayoutConstraint.activate([
             self.cookLabel.topAnchor.constraint(equalTo: veganFoodButton.bottomAnchor, constant: 400),
             self.cookLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 10)])
+    }
+    
+    private func collectionViewConfigConstraints() {
+        NSLayoutConstraint.activate([
+            self.myCollectionView.view.topAnchor.constraint(equalTo: self.topAnchor, constant: 400)])
     }
 }

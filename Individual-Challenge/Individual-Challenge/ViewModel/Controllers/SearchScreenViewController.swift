@@ -9,18 +9,12 @@ import UIKit
 
 class SearchScreenViewController: UIViewController {
     var screen: SearchScreenView?
-    
-    private let veganFood: VeganFoodViewController = {
-        let veganView = VeganFoodViewController()
-        veganView.view.translatesAutoresizingMaskIntoConstraints = false
-        return veganView
-    }()
+    var recipes: RecipeResult?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationbarItems()
-        view.addSubview(veganFood.view)
-        self.setUpConstraints()
+        hideKeyboardWhenTappedAround()
     }
     
     override func loadView() {
@@ -30,14 +24,15 @@ class SearchScreenViewController: UIViewController {
         self.screen?.veganFoodButton.addTarget(self, action: #selector(presentVeganFood), for: .touchUpInside)
         self.screen?.glutenFreeButton.addTarget(self, action: #selector(presentGlutenFreeFood), for: .touchUpInside)
         self.screen?.dairyFreeButton.addTarget(self, action: #selector(presentDairyFreeFood), for: .touchUpInside)
-    }
-    
-    private func setUpConstraints() {
-        NSLayoutConstraint.activate([
-            self.veganFood.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 100),
-            self.veganFood.view.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            //self.veganFood.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -5)
-        ])
+        
+        Task {
+            API().getRecipeByQuery(query: "pasta", handler: { recipe in
+                self.recipes = recipe
+                if let queryRecipes = self.recipes {
+                    print("Number of recipes \(queryRecipes.results.count)")
+                }
+            })
+        }
     }
     
     private func configureNavigationbarItems() {
@@ -46,13 +41,17 @@ class SearchScreenViewController: UIViewController {
     }
     
     @objc func presentVeganFood() {
-        let veganVC = VeganFoodViewController()
+        let veganVC = RecipesCollectionViewController()
+        if let recipes {
+            veganVC.numberOfCells = recipes.results.count
+            veganVC.recipes = self.recipes!
+            
+        }
         if let sheet = veganVC.sheetPresentationController {
-            sheet.detents = [.medium()]
+            sheet.detents = [.large()]
         }
         
-        veganVC.modalPresentationStyle = .overCurrentContext
-        veganVC.modalTransitionStyle = .crossDissolve
+        veganVC.modalPresentationStyle = .formSheet
         present(veganVC, animated: true, completion: nil)
     }
     
@@ -80,3 +79,20 @@ class SearchScreenViewController: UIViewController {
         print("Dairy free!")
     }
 }
+
+extension UIViewController {
+
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard(_:)))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+
+        if let nav = self.navigationController {
+            nav.view.endEditing(true)
+        }
+    }
+ }

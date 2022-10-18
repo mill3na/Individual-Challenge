@@ -34,6 +34,8 @@
 		F8B11B2928FB1115005DE5D5 /* GlutenFreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2828FB1115005DE5D5 /* GlutenFreeView.swift */; };
 		F8B11B2D28FB155D005DE5D5 /* GlutenFreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2C28FB155D005DE5D5 /* GlutenFreeViewController.swift */; };
 		F8B11B3028FDDBF6005DE5D5 /* DairyFreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2F28FDDBF6005DE5D5 /* DairyFreeViewController.swift */; };
+		F8B11B3328FE0F60005DE5D5 /* RecipesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B3228FE0F60005DE5D5 /* RecipesCollectionViewController.swift */; };
+		F8B11B3628FE1117005DE5D5 /* RecipesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B3528FE1117005DE5D5 /* RecipesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		F8B11B2828FB1115005DE5D5 /* GlutenFreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlutenFreeView.swift; sourceTree = "<group>"; };
 		F8B11B2C28FB155D005DE5D5 /* GlutenFreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlutenFreeViewController.swift; sourceTree = "<group>"; };
 		F8B11B2F28FDDBF6005DE5D5 /* DairyFreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyFreeViewController.swift; sourceTree = "<group>"; };
+		F8B11B3228FE0F60005DE5D5 /* RecipesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCollectionViewController.swift; sourceTree = "<group>"; };
+		F8B11B3528FE1117005DE5D5 /* RecipesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 		F8B11B0028F83166005DE5D5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F8B11B3428FE10F8005DE5D5 /* CollectionView */,
 				F8B11B0928F98250005DE5D5 /* Controllers */,
 				F8B11AF628F5860D005DE5D5 /* API */,
 			);
@@ -250,6 +255,15 @@
 				F8B11B2828FB1115005DE5D5 /* GlutenFreeView.swift */,
 			);
 			path = Diets;
+			sourceTree = "<group>";
+		};
+		F8B11B3428FE10F8005DE5D5 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F8B11B3228FE0F60005DE5D5 /* RecipesCollectionViewController.swift */,
+				F8B11B3528FE1117005DE5D5 /* RecipesCollectionViewCell.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,7 +428,9 @@
 			files = (
 				F8B11B2028FB0468005DE5D5 /* VeganFoodView.swift in Sources */,
 				F8B11B0B28F99C7C005DE5D5 /* SearchScreenViewController.swift in Sources */,
+				F8B11B3628FE1117005DE5D5 /* RecipesCollectionViewCell.swift in Sources */,
 				F8B11B3028FDDBF6005DE5D5 /* DairyFreeViewController.swift in Sources */,
+				F8B11B3328FE0F60005DE5D5 /* RecipesCollectionViewController.swift in Sources */,
 				F8B11ACB28F45825005DE5D5 /* Individual_Challenge.xcdatamodeld in Sources */,
 				F8B11AFD28F5AC29005DE5D5 /* Recipe.swift in Sources */,
 				F8B11B2728FB1107005DE5D5 /* DairyFreeView.swift in Sources */,
