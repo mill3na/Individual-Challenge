@@ -20,7 +20,7 @@ class RecipesCollectionViewController: UIViewController, UICollectionViewDataSou
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 5
-        layout.itemSize = CGSize(width: (view.frame.size.width - 10), height: (view.frame.size.height/2))
+        layout.itemSize = CGSize(width: view.frame.size.width - 80, height: (view.frame.size.height/2)-60)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         guard let collectionView = collectionView else {
@@ -42,6 +42,13 @@ class RecipesCollectionViewController: UIViewController, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecipesCollectionViewCell.identifier, for: indexPath) as? RecipesCollectionViewCell else {
                             return UICollectionViewCell(frame: .zero)
                         }
+        cell.layer.cornerRadius = 10
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor(named: "ThirdGreen")?.cgColor
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.layer.opacity = 0.6
+        cell.layer.masksToBounds = false
         cell.recipeInfo = recipes.results[indexPath.row]
         
         return cell

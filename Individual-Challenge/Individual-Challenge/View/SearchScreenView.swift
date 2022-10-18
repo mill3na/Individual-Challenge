@@ -8,9 +8,7 @@
 import UIKit
 
 protocol FoodDelegate: AnyObject {
-    func presentVeganFood()
-    func presentDairyFood()
-    func presentGlutenFreeFood()
+    func searchFood()
 }
 
 class SearchScreenView: UIView {
@@ -26,17 +24,17 @@ class SearchScreenView: UIView {
         self.addSubview(searchBar)
         self.searchbarConfigConstraints()
         
-//        self.addSubview(searchButton)
-//        self.searchButtonConfigConstraints()
+        self.addSubview(searchButton)
+        self.searchButtonConfigConstraints()
         
-        self.addSubview(veganFoodButton)
-        self.veganFoodButtonConfigConstraints()
-        
-        self.addSubview(glutenFreeButton)
-        self.glutenFreeButtonConfigConstraints()
-        
-        self.addSubview(dairyFreeButton)
-        self.dairyFreeButtonConfigConstraints()
+//        self.addSubview(veganFoodButton)
+//        self.veganFoodButtonConfigConstraints()
+//
+//        self.addSubview(glutenFreeButton)
+//        self.glutenFreeButtonConfigConstraints()
+//
+//        self.addSubview(dairyFreeButton)
+//        self.dairyFreeButtonConfigConstraints()
         
         self.addSubview(foodImage)
         self.gifImageConfigConstraints()
@@ -63,8 +61,10 @@ class SearchScreenView: UIView {
     
     var searchBar: UISearchBar = {
         var searchBar = UISearchBar()
+//        searchBar.searchTextField.addTarget(<#T##Any?#>, action: <#T##Selector#>, for: .valueChanged)
+//        searchBar.text
         searchBar.placeholder = "Search recipe"
-        searchBar.tintColor = UIColor(named: "PrimaryColor2")
+        searchBar.tintColor = .red//UIColor(named: "PrimaryColor2")
         searchBar.showsSearchResultsButton = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
@@ -72,7 +72,8 @@ class SearchScreenView: UIView {
     
     var searchButton: UIButton = {
         let searchButton = UIButton()
-        searchButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        searchButton.translatesAutoresizingMaskIntoConstraints = false
         return searchButton
     }()
     
@@ -133,7 +134,7 @@ class SearchScreenView: UIView {
         let image = UIImageView()
         image.image = UIImage.gifImageWithName("food")
         image.contentMode = .scaleAspectFit
-        image.frame = CGRect(x: 60, y: 253, width: 255, height: 230)
+        image.frame = CGRect(x: 60, y: 253, width: 350, height: 325)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -141,7 +142,7 @@ class SearchScreenView: UIView {
     let cookLabel: UILabel = {
         var cookLabel = UILabel()
         cookLabel.text = "What are we going to cook?"
-        cookLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        cookLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         cookLabel.textColor = .black
         cookLabel.numberOfLines = 0
         cookLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -152,20 +153,23 @@ class SearchScreenView: UIView {
         NSLayoutConstraint.activate([
             self.welcomeLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 110),
             self.welcomeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            self.welcomeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)])
+            self.welcomeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+        ])
     }
     
     private func searchbarConfigConstraints() {
         NSLayoutConstraint.activate([
             self.searchBar.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 20),
-            self.searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            self.searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50)])
+            self.searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)
+        ])
     }
     
     private func searchButtonConfigConstraints() {
-        NSLayoutConstraint.activate([self.searchButton.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 20),
+        NSLayoutConstraint.activate([
+            self.searchButton.centerYAnchor.constraint(equalTo: self.searchBar.centerYAnchor),
             self.searchButton.leadingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: 5),
-            self.searchButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3)])
+            self.searchButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+        ])
     }
     
     private func veganFoodButtonConfigConstraints() {
@@ -194,7 +198,7 @@ class SearchScreenView: UIView {
 
     private func gifImageConfigConstraints() {
         NSLayoutConstraint.activate([
-            self.foodImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 250),
+            self.foodImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 150),
             self.foodImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
             self.foodImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60)
         ])
@@ -202,12 +206,7 @@ class SearchScreenView: UIView {
     
     private func searchLabelConfigConstraints() {
         NSLayoutConstraint.activate([
-            self.cookLabel.topAnchor.constraint(equalTo: veganFoodButton.bottomAnchor, constant: 400),
+            self.cookLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 450),
             self.cookLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 10)])
-    }
-    
-    private func collectionViewConfigConstraints() {
-        NSLayoutConstraint.activate([
-            self.myCollectionView.view.topAnchor.constraint(equalTo: self.topAnchor, constant: 400)])
     }
 }

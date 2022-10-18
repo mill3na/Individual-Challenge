@@ -21,17 +21,10 @@ class SearchScreenViewController: UIViewController {
         self.screen = SearchScreenView()
         self.view = screen
         view.backgroundColor = .systemBackground
-        self.screen?.veganFoodButton.addTarget(self, action: #selector(presentVeganFood), for: .touchUpInside)
-        self.screen?.glutenFreeButton.addTarget(self, action: #selector(presentGlutenFreeFood), for: .touchUpInside)
-        self.screen?.dairyFreeButton.addTarget(self, action: #selector(presentDairyFreeFood), for: .touchUpInside)
+        self.screen?.searchButton.addTarget(self, action: #selector(searchFood), for: .touchUpInside)
         
         Task {
-            API().getRecipeByQuery(query: "pasta", handler: { recipe in
-                self.recipes = recipe
-                if let queryRecipes = self.recipes {
-                    print("Number of recipes \(queryRecipes.results.count)")
-                }
-            })
+
         }
     }
     
@@ -39,13 +32,25 @@ class SearchScreenViewController: UIViewController {
         navigationItem.title = "Search Recipe"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: nil)
     }
+    @objc func searchFood() {
+        
+        let query =  self.screen?.searchBar.text
+        if let query {
+            API().getRecipeByQuery(query: query, handler: { recipe in
+                self.recipes = recipe
+                DispatchQueue.main.async {
+                    self.presentSearchRecipe()
+                }
+            })
+        }
+    }
     
-    @objc func presentVeganFood() {
+    func presentSearchRecipe() {
         let veganVC = RecipesCollectionViewController()
         if let recipes {
             veganVC.numberOfCells = recipes.results.count
             veganVC.recipes = self.recipes!
-            
+            print()
         }
         if let sheet = veganVC.sheetPresentationController {
             sheet.detents = [.large()]
@@ -53,30 +58,6 @@ class SearchScreenViewController: UIViewController {
         
         veganVC.modalPresentationStyle = .formSheet
         present(veganVC, animated: true, completion: nil)
-    }
-    
-    @objc func presentGlutenFreeFood () {
-        let glutenFreeVC = GlutenFreeViewController()
-        if let sheet = glutenFreeVC.sheetPresentationController {
-                sheet.detents = [.medium()]
-            
-        }
-        glutenFreeVC.modalPresentationStyle = .overCurrentContext
-        glutenFreeVC.modalTransitionStyle = .crossDissolve
-        present(glutenFreeVC, animated: true, completion: nil)
-        print("Gluten Free!")
-    }
-    
-    @objc func presentDairyFreeFood() {
-        let dairyFreeVC = DairyFreeViewController()
-        if let sheet = dairyFreeVC.sheetPresentationController {
-                sheet.detents = [.medium()]
-            
-        }
-        dairyFreeVC.modalPresentationStyle = .overCurrentContext
-        dairyFreeVC.modalTransitionStyle = .crossDissolve
-        present(dairyFreeVC, animated: true, completion: nil)
-        print("Dairy free!")
     }
 }
 
