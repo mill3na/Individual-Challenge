@@ -27,23 +27,12 @@ class SearchScreenView: UIView {
         self.addSubview(searchButton)
         self.searchButtonConfigConstraints()
         
-//        self.addSubview(veganFoodButton)
-//        self.veganFoodButtonConfigConstraints()
-//
-//        self.addSubview(glutenFreeButton)
-//        self.glutenFreeButtonConfigConstraints()
-//
-//        self.addSubview(dairyFreeButton)
-//        self.dairyFreeButtonConfigConstraints()
-        
         self.addSubview(foodImage)
         self.gifImageConfigConstraints()
 
         self.addSubview(cookLabel)
         self.searchLabelConfigConstraints()
         
-//        self.addSubview(myCollectionView.view)
-//        self.collectionViewConfigConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -64,7 +53,7 @@ class SearchScreenView: UIView {
 //        searchBar.searchTextField.addTarget(<#T##Any?#>, action: <#T##Selector#>, for: .valueChanged)
 //        searchBar.text
         searchBar.placeholder = "Search recipe"
-        searchBar.tintColor = .red//UIColor(named: "PrimaryColor2")
+        searchBar.tintColor = .red
         searchBar.showsSearchResultsButton = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar

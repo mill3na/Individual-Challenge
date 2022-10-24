@@ -22,10 +22,7 @@ class SearchScreenViewController: UIViewController {
         self.view = screen
         view.backgroundColor = .systemBackground
         self.screen?.searchButton.addTarget(self, action: #selector(searchFood), for: .touchUpInside)
-        
-        Task {
-
-        }
+    
     }
     
     private func configureNavigationbarItems() {

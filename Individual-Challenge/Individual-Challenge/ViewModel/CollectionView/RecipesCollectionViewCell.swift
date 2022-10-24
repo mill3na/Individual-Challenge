@@ -9,39 +9,44 @@ import UIKit
 
 class RecipesCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "HomeScreenCollectionViewCell"
+
     var recipeInfo: Recipe! {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.label.text = self?.recipeInfo.title
             }
+            
+            API().getRecipeInstructions(id: recipeInfo.id, handler: { instructions in
+                DispatchQueue.main.async { [weak self] in
+//                    self?.instructions.text = instructions?.description
+                    print(instructions?.description as Any)
+                }
+            })
         }
     }
-    
-    static let identifier = "HomeScreenCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = UIColor(named: "SecondGreen")
-        self.addSubview(foodImage)
         self.addSubview(label)
+        self.recipeTitleConfigConstraints()
+        
+        self.addSubview(favoriteRecipe)
+        self.favoriteRecipeConfigConstraints()
+        
         self.addSubview(instructions)
-//        self.addSubview(favoriteRecipe)
-        self.layoutSubviews()
+        self.recipeInstructionsConfigConstraints()
     }
     
-    let foodImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(systemName: "heart")
-        image.contentMode = .scaleAspectFit
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     let label: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         label.numberOfLines = 0
-        label.lineBreakMode = .byCharWrapping
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -59,30 +64,39 @@ class RecipesCollectionViewCell: UICollectionViewCell {
     @objc func favoriteRecipeAction() {
         if favoriteRecipe.currentImage == UIImage(systemName: "heart") {
             favoriteRecipe.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        }
-        else {
+        } else {
             favoriteRecipe.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
     
-    let instructions: UILabel = {
+    var instructions: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
         return label
     }()
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private func recipeTitleConfigConstraints() {
+        NSLayoutConstraint.activate([
+            self.label.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            self.label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
+            self.label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40)
+        ])
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        foodImage.frame = CGRect(x: contentView.frame.size.width/2 - 50, y: contentView.frame.size.height/2 - 50, width: 100, height: 100)
-        
-        label.frame = CGRect(x: 0, y: 0, width: contentView.frame.size.width - 30, height: (contentView.frame.size.height/3) - 30)
-        
-        favoriteRecipe.frame = CGRect(x: contentView.frame.size.width - 100, y: 20, width: 30, height: 30)
-        
-        instructions.frame = CGRect(x: 0, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
+    private func favoriteRecipeConfigConstraints() {
+        NSLayoutConstraint.activate([
+            self.favoriteRecipe.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            self.favoriteRecipe.leadingAnchor.constraint(equalTo: self.label.trailingAnchor, constant: 10),
+            self.favoriteRecipe.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        ])
     }
+    
+    private func recipeInstructionsConfigConstraints() {
+        NSLayoutConstraint.activate([
+            self.instructions.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 30),
+            self.instructions.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            self.instructions.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30)])
+    }
+    
 }
