@@ -32,13 +32,12 @@ class API {
     
 
     func getRecipeInstructions(id: Int, handler: @escaping ([RecipeInstructionResult]?) -> Void) {
+        // gets the recipe instructions by recipe id
         let url = "https://api.spoonacular.com/recipes/\(id)/analyzedInstructions"
         getRecipeInstructionsRequest(url: url, completion: handler)
     }
     
     func getGeneralRecipeRequest(url: String, requestType: String, completion: @escaping ((RecipeResult?) -> Void)) {
-        
-        // completion devia ser Result type Result<RecipeResult, Error>
         // gets all the recipes from the API
         let urlRequest = URL(string: url)
         var request = URLRequest(url: urlRequest!)
@@ -71,7 +70,7 @@ class API {
     }
     
     func getRecipeInfoRequest(url: String, completion: @escaping ((RecipeInformationResult?) -> Void)) {
-
+        // get the recipe general infomation
         let urlRequest = URL(string: url)
         var request = URLRequest(url: urlRequest!)
         guard urlRequest != nil else {
@@ -103,6 +102,7 @@ class API {
     }
     
     func getRecipeInstructionsRequest(url: String, completion: @escaping (([RecipeInstructionResult]?) -> Void)) {
+        // gets the recipe instructions based on the recipe id
         let urlRequest = URL(string: url)
         var request = URLRequest(url: urlRequest!)
         guard urlRequest != nil else {
