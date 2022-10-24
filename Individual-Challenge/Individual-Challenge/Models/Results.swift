@@ -14,7 +14,7 @@ struct RecipeResult: Decodable {
     let results: [Recipe]
 }
 
-struct RecipeInformationResults: Decodable {
+struct RecipeInformationResult: Decodable {
     let id: Int
     let title: String
     let readyInMinutes: Int
