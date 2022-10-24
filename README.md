@@ -11,6 +11,6 @@ This app was made for you to find a recipe on a easy way. You can make a search 
 git clone https://github.com/mill3na/Individual-Challenge.git
 ```
 
-2. Open the project file on the branch '''main'''
+2. Open the project file on the branch main`
 
 3. Run the code 
