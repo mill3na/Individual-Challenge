@@ -39,7 +39,8 @@ class RecipesCollectionViewController: UIViewController, UICollectionViewDataSou
         }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecipesCollectionViewCell.identifier, for: indexPath) as? RecipesCollectionViewCell else {
+        let identifier = RecipesCollectionViewCell.identifier
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? RecipesCollectionViewCell else {
                             return UICollectionViewCell(frame: .zero)
                         }
         cell.layer.cornerRadius = 10

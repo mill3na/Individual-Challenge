@@ -32,14 +32,13 @@ class API {
     
 
     func getRecipeInstructions(id: Int, handler: @escaping ([RecipeInstructionResult]?) -> Void) {
+        // gets the recipe instructions by recipe id
         let url = "https://api.spoonacular.com/recipes/\(id)/analyzedInstructions"
         getRecipeInstructionsRequest(url: url, completion: handler)
     }
     
     func getGeneralRecipeRequest(url: String, requestType: String, completion: @escaping ((RecipeResult?) -> Void)) {
-        
-        // completion devia ser Result type Result<RecipeResult, Error>
-        // gets all the recipes from the API
+        // gets the recipes from the API on a general search
         let urlRequest = URL(string: url)
         var request = URLRequest(url: urlRequest!)
         guard urlRequest != nil else {
@@ -56,69 +55,6 @@ class API {
                 if error == nil {
                     do {
                         let decodedData = try JSONDecoder().decode(RecipeResult.self, from: data)
-                        completion(decodedData)
-                        return
-
-                    } catch {
-                        completion(nil)
-                        print("Error parsing response data")
-                    }
-                }
-            }
-            completion(nil)
-        })
-        dataTask.resume()
-    }
-    
-    func getRecipeInfoRequest(url: String, completion: @escaping ((RecipeInformationResult?) -> Void)) {
-
-        let urlRequest = URL(string: url)
-        var request = URLRequest(url: urlRequest!)
-        guard urlRequest != nil else {
-            print("Error! URL path is invalid. :(")
-            return
-        }
-        let headers = ["x-api-key": "ec2a1601eb7d487b99caee755f56c103"]
-        request.allHTTPHeaderFields = headers
-        request.httpMethod = "GET"
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request, completionHandler: { (data, _, error) in // _ = reponse
-            // if let / guard let
-            if let data {
-                if error == nil {
-                    do {
-                        let decodedData = try JSONDecoder().decode(RecipeInformationResult.self, from: data)
-                        completion(decodedData)
-                        return
-
-                    } catch {
-                        completion(nil)
-                        print("Error parsing response data")
-                    }
-                }
-            }
-            completion(nil)
-        })
-        dataTask.resume()
-    }
-    
-    func getRecipeInstructionsRequest(url: String, completion: @escaping (([RecipeInstructionResult]?) -> Void)) {
-        let urlRequest = URL(string: url)
-        var request = URLRequest(url: urlRequest!)
-        guard urlRequest != nil else {
-            print("Error! URL path is invalid. :(")
-            return
-        }
-        let headers = ["x-api-key": "ec2a1601eb7d487b99caee755f56c103"]
-        request.allHTTPHeaderFields = headers
-        request.httpMethod = "GET"
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request, completionHandler: { (data, _, error) in // _ = reponse
-            // if let / guard let
-            if let data {
-                if error == nil {
-                    do {
-                        let decodedData = try JSONDecoder().decode([RecipeInstructionResult].self, from: data)
                         completion(decodedData)
                         return
 
