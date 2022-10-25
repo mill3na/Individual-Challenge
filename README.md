@@ -1,7 +1,10 @@
 # Individual-Challenge
 The Apple Developer Academy Individual Challenge. BTW, what do you wanna eat?
 
-This app was made for you to find a recipe on a easy way. You can make a search by ingredients, diets or using natural language and the API will return a recipe for you.
+🏗🧱 App under construction
+
+
+This app was made for you to find a recipe on a easy way. At the search bar, you can make a search by ingredients, diets or using natural language and the API will return a list of recipes for you.
 
 ## How to use
 
