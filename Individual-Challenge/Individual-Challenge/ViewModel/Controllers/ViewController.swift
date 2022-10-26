@@ -31,13 +31,6 @@ class ViewController: UIViewController {
                 }
             })
         }
-        
-//        apiCall.getRecipeByQuery(query: "rice")
-//        apiCall.getRecipeInstructions(id: 404784) // {
-//            recipes in
-//            self.recipes = recipes
-//        }
-//        apiCall.getSpecificDietRecipe(diet: "vegan")
     }
 
 }

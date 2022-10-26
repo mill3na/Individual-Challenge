@@ -20,7 +20,7 @@ class RecipesCollectionViewController: UIViewController, UICollectionViewDataSou
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 5
-        layout.itemSize = CGSize(width: view.frame.size.width - 80, height: (view.frame.size.height/2)-60)
+        layout.itemSize = CGSize(width: view.frame.size.width - 80, height: 100)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         guard let collectionView = collectionView else {
