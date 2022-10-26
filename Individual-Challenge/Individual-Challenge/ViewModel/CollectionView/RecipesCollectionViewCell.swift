@@ -10,33 +10,37 @@ import UIKit
 class RecipesCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "HomeScreenCollectionViewCell"
-
+//    private var imageURl = ""
     var recipeInfo: Recipe! {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.label.text = self?.recipeInfo.title
+                
             }
             
-            API().getRecipeInstructions(id: recipeInfo.id, handler: { instructions in
-                DispatchQueue.main.async { [weak self] in
-//                    self?.instructions.text = instructions?.description
-                    print(instructions?.description as Any)
-                }
-            })
+//            API().getRecipeInstructions(id: recipeInfo.id, handler: { instructions in
+////                let inst: RecipeInstructionResult = [instructions.steps]
+//                if let instructions {
+//                    if let inst = instructions.first?.steps {
+//                        print("steps of the recipe \(self.recipeInfo.title): \(inst.count). Steps: \(inst.first)")
+//                    }
+//                }
+//
+//            })
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = UIColor(named: "SecondGreen")
         self.addSubview(label)
         self.recipeTitleConfigConstraints()
         
         self.addSubview(favoriteRecipe)
         self.favoriteRecipeConfigConstraints()
         
-        self.addSubview(instructions)
-        self.recipeInstructionsConfigConstraints()
+        self.addSubview(seeRecipeButton)
+        self.seeRecipeConfigConstraints()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -69,11 +73,11 @@ class RecipesCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var instructions: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        return label
+    private let seeRecipeButton: UIButton = {
+        let seeRecipeButton = UIButton()
+        seeRecipeButton.setImage(UIImage(systemName: "arrow.right.circle"), for: .normal)
+        seeRecipeButton.translatesAutoresizingMaskIntoConstraints = false
+        return seeRecipeButton
     }()
     
     private func recipeTitleConfigConstraints() {
@@ -92,11 +96,10 @@ class RecipesCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    private func recipeInstructionsConfigConstraints() {
+    private func seeRecipeConfigConstraints() {
         NSLayoutConstraint.activate([
-            self.instructions.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 30),
-            self.instructions.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.instructions.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30)])
+            self.seeRecipeButton.topAnchor.constraint(equalTo: favoriteRecipe.bottomAnchor, constant: 20),
+            self.seeRecipeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        ])
     }
-    
 }

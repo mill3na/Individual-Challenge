@@ -28,9 +28,6 @@
 		F8B11B1028F9EA6A005DE5D5 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F8B11B0F28F9EA6A005DE5D5 /* Lottie */; };
 		F8B11B1C28FA08A2005DE5D5 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B1B28FA08A2005DE5D5 /* Gif.swift */; };
 		F8B11B1E28FAEDE9005DE5D5 /* food.gif in Resources */ = {isa = PBXBuildFile; fileRef = F8B11B1D28FAEDE9005DE5D5 /* food.gif */; };
-		F8B11B2228FB04B8005DE5D5 /* VeganFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */; };
-		F8B11B2D28FB155D005DE5D5 /* GlutenFreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2C28FB155D005DE5D5 /* GlutenFreeViewController.swift */; };
-		F8B11B3028FDDBF6005DE5D5 /* DairyFreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B2F28FDDBF6005DE5D5 /* DairyFreeViewController.swift */; };
 		F8B11B3328FE0F60005DE5D5 /* RecipesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B3228FE0F60005DE5D5 /* RecipesCollectionViewController.swift */; };
 		F8B11B3628FE1117005DE5D5 /* RecipesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B11B3528FE1117005DE5D5 /* RecipesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -77,9 +74,6 @@
 		F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
 		F8B11B1B28FA08A2005DE5D5 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		F8B11B1D28FAEDE9005DE5D5 /* food.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = food.gif; sourceTree = "<group>"; };
-		F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganFoodViewController.swift; sourceTree = "<group>"; };
-		F8B11B2C28FB155D005DE5D5 /* GlutenFreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlutenFreeViewController.swift; sourceTree = "<group>"; };
-		F8B11B2F28FDDBF6005DE5D5 /* DairyFreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyFreeViewController.swift; sourceTree = "<group>"; };
 		F8B11B3228FE0F60005DE5D5 /* RecipesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCollectionViewController.swift; sourceTree = "<group>"; };
 		F8B11B3528FE1117005DE5D5 /* RecipesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,7 +189,6 @@
 		F8B11B0828F98243005DE5D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F8B11B3128FDDC0F005DE5D5 /* Diets */,
 				F8B11B1128F9EAF1005DE5D5 /* Assets */,
 				F8B11B0C28F99C93005DE5D5 /* SearchScreenView.swift */,
 			);
@@ -205,7 +198,6 @@
 		F8B11B0928F98250005DE5D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F8B11B2E28FDDBBE005DE5D5 /* Diets */,
 				F8B11B0628F9822D005DE5D5 /* CoreDataViewController.swift */,
 				F8B11AC428F45825005DE5D5 /* ViewController.swift */,
 				F8B11B0A28F99C7C005DE5D5 /* SearchScreenViewController.swift */,
@@ -229,23 +221,6 @@
 				F8B11B1B28FA08A2005DE5D5 /* Gif.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		F8B11B2E28FDDBBE005DE5D5 /* Diets */ = {
-			isa = PBXGroup;
-			children = (
-				F8B11B2128FB04B8005DE5D5 /* VeganFoodViewController.swift */,
-				F8B11B2C28FB155D005DE5D5 /* GlutenFreeViewController.swift */,
-				F8B11B2F28FDDBF6005DE5D5 /* DairyFreeViewController.swift */,
-			);
-			path = Diets;
-			sourceTree = "<group>";
-		};
-		F8B11B3128FDDC0F005DE5D5 /* Diets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Diets;
 			sourceTree = "<group>";
 		};
 		F8B11B3428FE10F8005DE5D5 /* CollectionView */ = {
@@ -419,12 +394,10 @@
 			files = (
 				F8B11B0B28F99C7C005DE5D5 /* SearchScreenViewController.swift in Sources */,
 				F8B11B3628FE1117005DE5D5 /* RecipesCollectionViewCell.swift in Sources */,
-				F8B11B3028FDDBF6005DE5D5 /* DairyFreeViewController.swift in Sources */,
 				F8B11B3328FE0F60005DE5D5 /* RecipesCollectionViewController.swift in Sources */,
 				F8B11ACB28F45825005DE5D5 /* Individual_Challenge.xcdatamodeld in Sources */,
 				F8B11AFD28F5AC29005DE5D5 /* Recipe.swift in Sources */,
 				F8B11AC528F45825005DE5D5 /* ViewController.swift in Sources */,
-				F8B11B2228FB04B8005DE5D5 /* VeganFoodViewController.swift in Sources */,
 				F8B11B0728F9822D005DE5D5 /* CoreDataViewController.swift in Sources */,
 				F8B11AFF28F5B2F5005DE5D5 /* Results.swift in Sources */,
 				F8B11AC128F45825005DE5D5 /* AppDelegate.swift in Sources */,
@@ -432,7 +405,6 @@
 				F8B11AFB28F594B6005DE5D5 /* API.swift in Sources */,
 				F8B11B0428F97F58005DE5D5 /* FavoriteRecipe+CoreDataProperties.swift in Sources */,
 				F8B11B1C28FA08A2005DE5D5 /* Gif.swift in Sources */,
-				F8B11B2D28FB155D005DE5D5 /* GlutenFreeViewController.swift in Sources */,
 				F8B11B0D28F99C93005DE5D5 /* SearchScreenView.swift in Sources */,
 				F8B11AC328F45825005DE5D5 /* SceneDelegate.swift in Sources */,
 			);
